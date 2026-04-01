@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riccardo Bazzoni</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       HOME
+       ════════════════════════════════════════ -->
+  <section class="page active" id="home">
+
+    <div class="inner">
+      <div class="home-topbar">
+        <span class="logo">RB — Portfolio</span>
+        <span style="font-size:0.65rem;letter-spacing:0.15em;color:var(--gray);text-transform:uppercase;">2025</span>
+      </div>
+    </div>
+
+    <div class="home-hero-desktop" style="width:100%;">
+      <div class="inner" style="padding-bottom:0;">
+        <div class="home-hero">
+          <h1>Riccardo<span>Bazzoni</span></h1>
+        </div>
+      </div>
+      <div class="home-photo">
+        <img src="img/profile.jpg" alt="Riccardo Bazzoni">
+        <span class="home-photo-label">Verona, IT</span>
+        <div class="home-photo-stripe"></div>
+      </div>
+    </div>
+
+    <div class="inner">
+      <div class="divider"></div>
+      <div class="home-sections-grid home-sections">
+        <div class="home-section">
+          <span class="section-title-big">Chi sono</span>
+          <span class="section-sub-small">Identità</span>
+          <p>Sono un creativo con passione per il design digitale. Trasformo idee complesse in esperienze visive memorabili.</p>
+        </div>
+        <div class="home-section">
+          <span class="section-title-big">Cosa faccio</span>
+          <span class="section-sub-small">Servizi</span>
+          <p>UI Design, sviluppo frontend, branding. Ogni progetto è pensato con cura per raccontare una storia autentica.</p>
+        </div>
+        <div class="home-section">
+          <span class="section-title-big">Lato creativo</span>
+          <span class="section-sub-small">Arte &amp; cultura</span>
+          <p>Fotografia analogica, musica elettronica, illustrazione. L'espressione artistica è al centro di tutto.</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+
+      <div class="home-ctas">
+        <button class="btn-cta" onclick="goTo('progetti')">→ Progetti</button>
+        <button class="btn-cta-outline" onclick="goTo('contatti')">→ Contatti</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       PROGETTI
+       ════════════════════════════════════════ -->
+  <section class="page" id="progetti">
+    <div class="inner">
+      <div class="page-topbar">
+        <button class="btn-back" onclick="goTo('home')">←</button>
+        <h1>Progetti</h1>
+      </div>
+
+      <div class="project-list">
+
+        <!-- Progetto 1: Calligramma — immagine a sinistra -->
+        <div class="project-item">
+          <div class="project-img-wrap">
+            <img src="img/calligramma.jpg" alt="Calligramma" style="object-fit:contain;background:var(--black);">
+          </div>
+          <div class="project-cta-strip">
+            <span class="project-name">Calligramma</span>
+            <button class="project-img-cta" onclick="goTo('progetto-singolo', 'calligramma')">Apri →</button>
+          </div>
+        </div>
+
+        <!-- Progetto 2: placeholder — immagine a destra -->
+        <div class="project-item alt">
+          <div class="project-img-wrap">
+            <div class="img-ph"></div>
+          </div>
+          <div class="project-cta-strip">
+            <span class="project-name">Web App Dashboard</span>
+            <button class="project-img-cta" onclick="goTo('progetto-singolo', 'web-app')">Apri →</button>
+          </div>
+        </div>
+
+        <!-- Progetto 3: placeholder — immagine a sinistra -->
+        <div class="project-item">
+          <div class="project-img-wrap">
+            <div class="img-ph"></div>
+          </div>
+          <div class="project-cta-strip">
+            <span class="project-name">Motion &amp; Visual</span>
+            <button class="project-img-cta" onclick="goTo('progetto-singolo', 'motion')">Apri →</button>
+          </div>
+        </div>
+
+        <!-- Progetto 4: placeholder — immagine a destra -->
+        <div class="project-item alt">
+          <div class="project-img-wrap">
+            <div class="img-ph"></div>
+          </div>
+          <div class="project-cta-strip">
+            <span class="project-name">Type Specimen</span>
+            <button class="project-img-cta" onclick="goTo('progetto-singolo', 'type')">Apri →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       PROGETTO SINGOLO
+       ════════════════════════════════════════ -->
+  <section class="page" id="progetto-singolo">
+    <div class="inner">
+      <div class="page-topbar">
+        <button class="btn-back" onclick="goTo('progetti')">←</button>
+        <h1 id="singolo-title" style="font-size:clamp(1.6rem,5vw,3rem);">Progetto</h1>
+      </div>
+    </div>
+
+    <!-- Gallery (full width) -->
+    <div class="singolo-gallery">
+      <div class="gallery-track" id="gallery-track">
+        <!-- Le slide vengono popolate da JS in base al progetto aperto -->
+      </div>
+      <button class="gallery-btn prev" onclick="galleryMove(-1)">‹</button>
+      <button class="gallery-btn next" onclick="galleryMove(1)">›</button>
+      <div class="gallery-dots" id="gallery-dots"></div>
+    </div>
+
+    <div class="inner">
+      <div class="singolo-text">
+        <div class="singolo-text-grid">
+          <div class="singolo-block">
+            <h2 id="singolo-h2">Descrizione</h2>
+            <p id="singolo-desc">—</p>
+          </div>
+          <div class="singolo-block">
+            <h2>Dettagli tecnici</h2>
+            <p id="singolo-details">—</p>
+          </div>
+        </div>
+      </div>
+      <div class="singolo-footer">
+        <button class="btn-cta" style="max-width:400px;" onclick="goTo('contatti')">Parliamo del tuo progetto →</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       CONTATTI
+       ════════════════════════════════════════ -->
+  <section class="page" id="contatti">
+    <div class="inner">
+      <div class="page-topbar">
+        <button class="btn-back" onclick="goTo('home')">←</button>
+        <h1>Contatti</h1>
+      </div>
+
+      <div class="contatti-body">
+        <div class="contatti-body-grid">
+          <div>
+            <h2>Iniziamo a collaborare</h2>
+            <p>Sono sempre aperto a nuove collaborazioni, progetti freelance o semplicemente a fare due chiacchiere sul design e sulla creatività.</p>
+            <p>Scrivimi direttamente via email o trovami sui social. Rispondo entro 24 ore.</p>
+          </div>
+          <div>
+            <div class="status-row">
+              <span class="status-dot"></span>Disponibile per nuovi progetti
+            </div>
+            <div class="contact-grid">
+              <div class="contact-cell">
+                <h3>Email</h3>
+                <p>riccardo@bazzoni.it</p>
+              </div>
+              <div class="contact-cell">
+                <h3>Instagram</h3>
+                <p>@riccardo.bz</p>
+              </div>
+              <div class="contact-cell">
+                <h3>LinkedIn</h3>
+                <p>Riccardo Bazzoni</p>
+              </div>
+              <div class="contact-cell">
+                <h3>Behance</h3>
+                <p>riccardo-bazzoni</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contatti-ctas">
+        <button class="btn-cta" onclick="window.location.href='mailto:riccardo@bazzoni.it'">Invia una mail →</button>
+        <button id="btn-torna-progetti" class="btn-cta-outline" onclick="goTo('progetti')">← Torna ai progetti</button>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="main.js"></script>
+</body>
+</html>
